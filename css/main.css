@@ -87,89 +87,218 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+a{
+  text-decoration: none;
+  color : black
+}
+a:hover{
+  text-decoration: underline;
+  color : black
+}
 /****** MENU *********/
 #menu{
-  background-color: black;
   height: 100vh;
 }
-#menuTitre{
-  background-color: aqua;
-  border: 1px solid black;
-  width: 50%;
-  height: 30%;
-  margin-left: 25%;
-  margin-top: 5%;
-}
-#titre{
-  text-align: center;
+#menuTitre h1{
+  font-family: 'Bungee Shade', cursive;
+  font-size: 40px;
+  margin-top: 2em;
 }
 #menuRow{
-  border: 1px solid black;
-  width: 50%;
+  width: 80%;
   height: 30%;
-  margin-left: 25%;
-  margin-top: 5%;
-  
+  margin-left: 10%;
+  margin-top: 3em;
 }
 #list{
-  border: 5px solid rgb(255, 0, 0);
-  background-color: aqua;
+  border: 5px solid rgb(9, 255, 0);
+  padding:1em 2em;
 }
-li.selected{
-  background:yellow
+#list li{
+  font-family: 'Bungee', cursive;
+  font-size: x-small;
+  list-style: none;
+}
+#list h3{
+  font-size: x-small;
+  font-family: 'Bungee', cursive;
+  text-decoration: underline;
+  padding: 0.5em 0;
+}
+#darkMode, #quitter{
+  cursor: pointer;
+}
+#darkMode:hover {
+  text-decoration: underline; 
+}
+#quitter:hover {
+  text-decoration: underline; 
+}
+@media (min-width: 576px) { 
+  #menuTitre h1{
+    font-size: 100px;
+  }
+  #menuRow{
+    width: 50%;
+    height: 30%;
+    margin-left: 25%;
+    margin-top: 5em;
+  }
+  #list{
+    padding:1em 4em;
+  }
+  #list li{
+    font-size: large;
+  }
+  #list h3{
+    font-size: large;
+  }
+  li.selected{
+    border: 2px solid rgb(9, 255, 0);
+  }
+  .menuOption{
+    font-size: x-large;
+  }
 }
 /****** CARD *********/
-.scene {
-  
-  perspective: 100vh;
-}
 
-.card {
-  width: 100%;
-  height: 35vh;
- 
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform-origin: center right;
-  transition: transform 1s;
-}
-
-.card.is-flipped {
-  transform: translateX(-100%) rotateY(-180deg);
-}
-
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  backface-visibility: hidden;
-}
-
-.card__face--front {
-  background: red;
-}
-
-.card__face--back {
-  background-image: url('../img/mars-test.png');
-  background-size: cover;
-  transform: rotateY(180deg);
+div.btn.m-2:hover{
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 /****** SPACE *********/
-#spaceContainer{
-  background-color: chartreuse;
+#space{
+  background-image: url('../img/ciel-étoilé.png');
   height: 100vh;
 }
+.rowGame{
+  margin: 0px !important;
+}
+#header div{
+  margin: 2em 2em;
+}
+#muted{
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  padding: 1em;
+  font-family: 'Michroma', sans-serif;
+  font-size: medium;
+  cursor: pointer;
+}
+#muted:hover{
+  color: rgb(9, 255, 0);
+  border: 1px solid rgb(9, 255, 0);
+}
+#header a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Michroma', sans-serif;
+  font-size: medium;
+  border: 1px solid white;
+  padding: 1em;
+}
+#header a:hover{
+  color: rgb(9, 255, 0);
+  border: 1px solid rgb(9, 255, 0);
+} 
+#tentatives, #timer{
+  color: #ffffff; 
+  font-family: 'Michroma', sans-serif;
+  font-size: medium;
+}
 #spaceTitle{
-  text-align: center;
+  color: #ffffff;
+  font-family: 'Michroma', sans-serif;
+  text-decoration: underline;
+  margin: 1em 0;
+  font-size: x-large;
 }
 
+/****** THE BIG BANG THEORY *********/
+#tbbt{
+  background-color: #f7b233;
+  background-size: cover;
+  height: 100vh;
+}
+/* .rowTbbt{
+  margin: 0px !important;
+  background-color: rgba(0, 0, 0, 0.342);
+} */
+/****** LAYER JOUER*********/
+#layerStart{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.850);
+  height: 100%;
+  width: 100%;
+}
+#txtLayer{
+  text-align: center;
+  color: white;
+  font-size: x-large;
+  font-family: 'Michroma', sans-serif;
+  width: 30%;
+  margin-top: 20%;
+  margin-left: 35%;
+  padding: 1em;
+}
+#boutonStart{
+  display: flex;
+  justify-content: center;
+}
+#boutonStart span{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  padding: 1em;
+  font-size: large;
+  font-family: 'Michroma', sans-serif;
+  cursor: pointer;
+}
+#boutonStart span:hover{
+  color: rgb(9, 255, 0);
+  border: 1px solid rgb(9, 255, 0);
+}
+/****** LAYER REJOUER*********/
+.layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.850);
+  height: 100%;
+  width: 100%;
+}
+.txtLayer{
+  text-align: center;
+  color: white;
+  font-size: x-large;
+  font-family: 'Michroma', sans-serif;
+  width: 30%;
+  margin-top: 20%;
+  margin-left: 35%;
+  padding: 1em;
+}
+.boutonLayer{
+  display: flex;
+  justify-content: center;
+}
+.boutonLayer a{
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  padding: 1em;
+  font-size: medium;
+  font-family: 'Michroma', sans-serif;
+}
+.boutonLayer a:hover{
+  color: rgb(9, 255, 0);
+  border: 1px solid rgb(9, 255, 0);
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
